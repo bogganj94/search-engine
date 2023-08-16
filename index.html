@@ -1,17 +1,59 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Add Bootstrap CSS link for dark theme -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark d-flex justify-content-center align-items-center vh-100"> <!-- Center content vertically and horizontally -->
+    <script type="text/javascript">
+        function dosearch() {
+            var sf = document.searchform;
+            var submitto = sf.sengines.options[sf.sengines.selectedIndex].value + encodeURIComponent(sf.searchterms.value); // Use encodeURIComponent instead of escape
+            window.location.href = submitto;
+            return false;
+        }
+    </script>
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <h1>Welcome to github pages</h1>
-        
-        <script src="" async defer></script>
-    </body>
+    <div class="container text-white">
+        <form name="searchform" onSubmit="return dosearch();" class="mb-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="sengines" class="form-label">Search:</label>
+                    <select name="sengines" id="sengines" class="form-select">
+                        <option value="http://www.google.com/search?q=" selected>Google</option>
+                        <option value="https://www.bing.com/search?q=">Bing</option>
+                        <option value="http://search.yahoo.com/search?p=">Yahoo</option>
+                        <option value="https://duckduckgo.com/?q=">DuckDuckGo</option>
+                        <option value="https://www.yandex.com/search/?text=">Yandex</option>
+                        <option value="https://www.baidu.com/s?wd=">Baidu (Chinese)</option>
+                        <option value="https://www.ecosia.org/search?q=">Ecosia</option>
+                        <option value="https://www.startpage.com/do/dsearch?query=">Startpage</option>
+                        <option value="https://www.qwant.com/?q=">Qwant</option>
+                        <option value="https://searx.info/?q=">Searx</option>
+                        <option value="https://www.ask.com/web?q=">Ask</option>
+                        <option value="https://www.wolframalpha.com/input/?i=">Wolfram Alpha</option>
+                        <option value="https://www.duckduckgo.com/html?q=">DuckDuckGo (HTML version)</option>
+                        <option value="https://www.yippy.com/search?q=">Yippy</option>
+                        <option value="https://www.gigablast.com/search?q=">Gigablast</option>
+                        <option value="https://www.qwant.com/?q=">Qwant</option>
+                        <!-- Continue adding more search engines here -->
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="searchterms" class="form-label">For:</label>
+                    <div class="input-group">
+                        <input type="text" name="searchterms" id="searchterms" class="form-control">
+                        <button type="submit" name="SearchSubmit" class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js (required for some Bootstrap features) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
